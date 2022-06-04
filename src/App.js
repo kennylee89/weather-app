@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-
 import React, { useEffect, useState } from "react";
+import Weather from './components/weather';
+
+
 
 function App() {
 
@@ -31,7 +33,13 @@ function App() {
 
   return (
     <div className="App">
-      <p>Weather App</p>
+      <h2>Weather App</h2>
+
+      {(typeof data.main != 'undefined') ? (
+        <Weather weatherData={data} />
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
